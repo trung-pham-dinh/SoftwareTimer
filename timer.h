@@ -10,7 +10,6 @@
 
 #include "main.h"
 #include <stdlib.h>
-#include "input_reading.h"
 
 #define TIMER_CLOCK_FREQ 8000
 
