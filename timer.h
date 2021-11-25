@@ -1,7 +1,7 @@
 /*
  * timer.h
  *
- *  Created on: Oct 5, 2021
+ *  Created on: Nov 25, 2021
  *      Author: fhdtr
  */
 
@@ -9,25 +9,27 @@
 #define INC_TIMER_H_
 
 #include "main.h"
-#include <stdlib.h>
 
 #define TIMER_CLOCK_FREQ 8000
+#define	NO_OF_SEC_TIMERS 1
+#define NO_OF_MIL_TIMERS 0
 
 typedef enum {
-	START_TIMER = 0,
-	STOP_TIMER = 1
+	TM_START_TIMER = 0,
+	TM_STOP_TIMER = 1
 } ControlTimer;
 
-void init_timer(TIM_HandleTypeDef *tim, unsigned int num_sec, unsigned int num_mil);
-uint8_t setMilTimer(uint8_t timer, unsigned int value);
-uint8_t setSecTimer(uint8_t timer, unsigned int value);
-uint8_t getMilFlag(uint8_t timer);
-uint8_t getSecFlag(uint8_t timer);
-unsigned int getMilCounter(uint8_t timer);
-unsigned int getSecCounter(uint8_t timer);
-void resetMilFlag(uint8_t timer);
-void resetSecFlag(uint8_t timer);
-void controlMilTimer(uint8_t timer, ControlTimer control);
-void controlSecTimer(uint8_t timer, ControlTimer control);
 
+void TM_init_timer(TIM_HandleTypeDef *tim);
+uint8_t TM_setMilTimer(uint8_t timer, unsigned int value);
+uint8_t TM_setSecTimer(uint8_t timer, unsigned int value);
+uint8_t TM_getMilFlag(uint8_t timer);
+uint8_t TM_getSecFlag(uint8_t timer);
+unsigned int TM_getMilCounter(uint8_t timer);
+unsigned int TM_getSecCounter(uint8_t timer);
+void TM_resetMilFlag(uint8_t timer);
+void TM_resetSecFlag(uint8_t timer);
+void TM_controlMilTimer(uint8_t timer, ControlTimer control);
+void TM_controlSecTimer(uint8_t timer, ControlTimer control);
+void TM_timerRun();
 #endif /* INC_TIMER_H_ */
