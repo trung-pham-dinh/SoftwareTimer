@@ -219,7 +219,6 @@ void controlSecTimer(uint8_t timer, ControlTimer control) {
 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim) {
-	button_reading();
 	for(int i = 0; i < NO_OF_MIL_TIMERS; i++) {
 		if(timer_mil_stop[i] == STOP_TIMER) continue;
 		if(timer_mil_counter[i] > 0) {
